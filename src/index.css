@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "General Sans", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --color-ivory: #f7f5f0;
+  --color-ivory-deep: #efebe3;
+  --color-charcoal: #2c2c2a;
+  --color-charcoal-muted: #5a5a56;
+  --color-charcoal-soft: #8a8a84;
+  --color-sage: #7d9b8a;
+  --color-sage-light: #a8c4b4;
+  --color-sage-muted: #d4e4da;
+  --color-blush: #e8ddd4;
+  --color-sand: #ddd5c8;
+  --color-line: #e2ddd4;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-[#e5e1d9] font-body text-charcoal antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
+  }
+
+  ::selection {
+    @apply bg-sage-muted text-charcoal;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.workspace-scroll {
+  scroll-behavior: smooth;
+}
