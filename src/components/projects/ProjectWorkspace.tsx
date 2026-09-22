@@ -29,7 +29,7 @@ export function ProjectWorkspace() {
           Product workspaces
         </h2>
         <p className="mt-3 text-base text-charcoal-muted">
-          Switch tabs to explore each build-stack, links, and build notes.
+          Switch tabs to explore each build—stack, links, and build notes.
         </p>
       </motion.header>
 
