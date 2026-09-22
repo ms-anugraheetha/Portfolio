@@ -48,7 +48,7 @@ export const projects: Project[] = [
   },
   {
     id: "unimoney",
-    title: "UniMoney — Student Expense Tracker",
+    title: "UniMoney - Student Expense Tracker",
     tagline: "Budgeting and spending analytics for students",
     description:
       "Full-stack expense tracking application for university students with budgeting, transaction management, and spending analytics.",
