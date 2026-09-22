@@ -29,51 +29,57 @@ export function ProjectWorkspace() {
           Product workspaces
         </h2>
         <p className="mt-3 text-base text-charcoal-muted">
-          Switch tabs to explore each build—stack, links, and build notes.
+          Switch tabs to explore each build-stack, links, and build notes.
         </p>
       </motion.header>
 
       <div
-        className="mb-6 flex gap-1 overflow-x-auto border-b border-line pb-0"
-        role="tablist"
-        aria-label="Projects"
+        className="relative mb-6 -mx-5 border-b border-line px-5 md:mx-0 md:px-0"
+        role="presentation"
       >
-        {projects.map((p) => {
-          const active = p.id === activeProjectId;
-          return (
-            <button
-              key={p.id}
-              type="button"
-              role="tab"
-              aria-selected={active}
-              onClick={() => onSelectProject(p.id)}
-              className={`relative shrink-0 rounded-t-lg px-4 py-2.5 text-sm font-medium transition-colors ${
-                active
-                  ? "bg-ivory-deep text-charcoal"
-                  : "text-charcoal-muted hover:bg-ivory-deep/50 hover:text-charcoal"
-              }`}
-            >
-              {active && (
-                <motion.span
-                  layoutId="project-tab"
-                  className="absolute inset-x-0 top-0 h-0.5 bg-sage"
-                  transition={{ duration: 0.25 }}
-                />
-              )}
-              <span className="hidden sm:inline">
-                {p.title}
-                {p.status === "in-development" ? " · WIP" : ""}
-              </span>
-              <span className="sm:hidden">
-                {p.id === "travel"
-                  ? "Travel"
-                  : p.id === "unimoney"
-                    ? "UniMoney"
-                    : "Coach"}
-              </span>
-            </button>
-          );
-        })}
+        <div
+          className="flex gap-1 overflow-x-auto pb-0"
+          role="tablist"
+          aria-label="Projects"
+        >
+          {projects.map((p) => {
+            const active = p.id === activeProjectId;
+            return (
+              <button
+                key={p.id}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                onClick={() => onSelectProject(p.id)}
+                className={`relative shrink-0 rounded-t-lg px-4 py-2.5 text-sm font-medium transition-colors ${
+                  active
+                    ? "bg-ivory-deep text-charcoal"
+                    : "text-charcoal-muted hover:bg-ivory-deep/50 hover:text-charcoal"
+                }`}
+              >
+                {active && (
+                  <motion.span
+                    layoutId="project-tab"
+                    className="absolute inset-x-0 top-0 h-0.5 bg-sage"
+                    transition={{ duration: 0.25 }}
+                  />
+                )}
+                <span className="hidden sm:inline">
+                  {p.title}
+                  {p.status === "in-development" ? " · WIP" : ""}
+                </span>
+                <span className="sm:hidden">
+                  {p.shortTitle}
+                  {p.status === "in-development" ? " · WIP" : ""}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+        <div
+          className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-ivory to-transparent sm:hidden"
+          aria-hidden
+        />
       </div>
 
       <AnimatePresence mode="wait">
@@ -122,7 +128,7 @@ export function ProjectWorkspace() {
 
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 {project.demo ? (
-                  <a
+                  
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -135,7 +141,7 @@ export function ProjectWorkspace() {
                     Live demo coming soon
                   </span>
                 )}
-                <a
+                
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
