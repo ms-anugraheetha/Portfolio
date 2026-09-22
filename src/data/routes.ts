@@ -3,6 +3,7 @@ import type { ProjectId, SectionId } from "@/types/workspace";
 const BASE = "anugraheetha.dev";
 
 export const projectSlugs: Record<ProjectId, string> = {
+  rasova: "rasova",
   travel: "travel-system",
   unimoney: "unimoney",
   coach: "python-confidence-coach",
