@@ -1,3 +1,3 @@
 export type SectionId = "home" | "projects" | "about" | "stack" | "contact";
 
-export type ProjectId = "travel" | "unimoney" | "coach";
+export type ProjectId = "rasova" | "travel" | "unimoney" | "coach";
