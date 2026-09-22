@@ -3,6 +3,7 @@ import type { ProjectId } from "@/types/workspace";
 export type Project = {
   id: ProjectId;
   title: string;
+  shortTitle: string;
   tagline: string;
   description: string;
   stack: string[];
@@ -16,6 +17,7 @@ export const projects: Project[] = [
   {
     id: "rasova",
     title: "Rasova",
+    shortTitle: "Rasova",
     tagline: "Production e-commerce platform with payments",
     description:
       "Full-stack Laravel e-commerce platform with a mobile-first storefront, admin panel, and guest checkout, deployed to production on a custom Docker/Nginx stack.",
@@ -32,6 +34,7 @@ export const projects: Project[] = [
   {
     id: "travel",
     title: "Travel Destination Recommendation System",
+    shortTitle: "Travel",
     tagline: "ML-powered personalized travel suggestions",
     description:
       "Full-stack recommendation platform that generates personalized travel suggestions using Ridge Regression and Collaborative Filtering models.",
@@ -49,6 +52,7 @@ export const projects: Project[] = [
   {
     id: "unimoney",
     title: "UniMoney - Student Expense Tracker",
+    shortTitle: "UniMoney",
     tagline: "Budgeting and spending analytics for students",
     description:
       "Full-stack expense tracking application for university students with budgeting, transaction management, and spending analytics.",
@@ -65,6 +69,7 @@ export const projects: Project[] = [
   {
     id: "coach",
     title: "Python Confidence Coach",
+    shortTitle: "Coach",
     tagline: "AI-assisted learning for beginner Python",
     description:
       "AI-assisted learning platform using an agentic explain-check-assess coaching loop to help beginner Python learners understand concepts through guided explanations, code analysis, and adaptive follow-up exercises.",
