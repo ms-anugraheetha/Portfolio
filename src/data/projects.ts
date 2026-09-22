@@ -14,6 +14,22 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "rasova",
+    title: "Rasova",
+    tagline: "Production e-commerce platform with payments",
+    description:
+      "Full-stack Laravel e-commerce platform with a mobile-first storefront, admin panel, and guest checkout, deployed to production on a custom Docker/Nginx stack.",
+    stack: ["PHP", "Laravel", "PostgreSQL", "Docker", "Nginx", "Razorpay", "Railway"],
+    github: "https://github.com/ms-anugraheetha",
+    demo: "https://rasovadelights.com",
+    status: "live",
+    behindTheBuild: [
+      "Built a full-stack Laravel e-commerce platform with mobile-first storefront, admin panel, and guest checkout.",
+      "Integrated Razorpay payments with signature-verified webhooks and Cloudflare R2 image storage.",
+      "Deployed to production on a custom Docker/Nginx stack on Railway with a custom domain; automated daily database backups via GitHub Actions.",
+    ],
+  },
+  {
     id: "travel",
     title: "Travel Destination Recommendation System",
     tagline: "ML-powered personalized travel suggestions",
@@ -51,16 +67,17 @@ export const projects: Project[] = [
     title: "Python Confidence Coach",
     tagline: "AI-assisted learning for beginner Python",
     description:
-      "Developing an AI-assisted learning platform that helps beginner Python learners understand concepts through guided explanations, code analysis, and adaptive follow-up exercises.",
-    stack: ["React", "TypeScript", "FastAPI", "Python"],
-    github: "https://github.com/ms-anugraheetha",
-    status: "in-development",
+      "AI-assisted learning platform using an agentic explain-check-assess coaching loop to help beginner Python learners understand concepts through guided explanations, code analysis, and adaptive follow-up exercises.",
+    stack: ["React", "TypeScript", "FastAPI", "PostgreSQL"],
+    github: "https://github.com/ms-anugraheetha/python-confidence-coach",
+    demo: "https://python-confidence-coach.vercel.app/login",
+    status: "live",
     behindTheBuild: [
-      "Designing agent-based workflows for code explanation, debugging assistance, and learning reinforcement.",
-      "Integrating Python execution and static analysis tools to evaluate user-submitted code snippets.",
-      "Building TypeScript-based frontend interfaces focused on interactive learning and user feedback.",
+      "Built an AI-assisted learning platform using an agentic explain-check-assess coaching loop for Python beginners.",
+      "Built a standalone MCP server for explanation, comprehension-check, and answer-assessment tools.",
+      "Developed FastAPI + PostgreSQL backend with JWT/Google OAuth; Dockerized and deployed on Render + Vercel.",
     ],
   },
 ];
 
-export const defaultProjectId: ProjectId = "travel";
+export const defaultProjectId: ProjectId = "rasova";
