@@ -1,14 +1,13 @@
 export const site = {
   name: "Anugraheetha Bin Saj",
-  shortName: "Anugraheetha",
-  role: "Junior Frontend / Software Developer",
-  headline: "Frontend-focused full-stack developer",
+  shortName: "Anu",
+  role: "",
+  headline: "Building products end-to-end",
   location: "Riga, Latvia",
-  educationLine: "BSc Computer Systems · Riga Technical University (RTU)",
-  availability:
-    "Seeking Junior Frontend Developer or Junior Software Developer roles",
+  educationLine: "MSc Computer Science · Riga Nordic University",
+  availability: "Open to work full-time",
   about:
-    "Final-year Computer Science student at Riga Technical University with experience building full-stack web applications using React, FastAPI, Node.js, PostgreSQL, and Python. Focused on frontend development and user-centered problem solving, with experience building deployed applications, recommendation systems, and AI-assisted software projects.",
+    "Based in Riga, Latvia, with a BSc in Computer Systems from Riga Technical University and currently pursuing an MSc in Computer Science at Riga Nordic University. Experience building and deploying production applications using React, FastAPI, Node.js, Laravel, PostgreSQL, and Python. Focused on user-centered problem solving, with experience across e-commerce, recommendation systems, and AI-assisted software projects.",
   workStyle:
     "Comfortable working independently or on a team—I genuinely value healthy, direct feedback and use it to improve the work.",
   languages: "English",
@@ -21,9 +20,15 @@ export const site = {
 
 export const education = [
   {
+    degree: "MSc Computer Science",
+    school: "Riga Nordic University",
+    period: "Sep 2026 — Present",
+    location: "Riga, Latvia",
+  },
+  {
     degree: "BSc Computer Systems",
     school: "Riga Technical University",
-    period: "Sep 2023 — Present",
+    period: "Sep 2023 — Sep 2026",
     location: "Riga, Latvia",
   },
   {
