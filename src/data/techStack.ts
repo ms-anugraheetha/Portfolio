@@ -23,14 +23,24 @@ export const techStack: TechCategory[] = [
   },
   {
     name: "Backend",
-    items: ["FastAPI", "Node.js", "Express.js", "REST APIs"],
+    items: ["FastAPI", "Node.js", "Express.js", "Laravel", "REST APIs", "OAuth"],
   },
   {
     name: "Databases",
     items: ["PostgreSQL", "SQLite", "MongoDB", "MySQL"],
   },
   {
-    name: "Tools & Platforms",
-    items: ["Git", "GitHub", "Vercel", "Netlify", "Render"],
+    name: "DevOps & Cloud",
+    items: [
+      "Docker",
+      "Nginx",
+      "Git",
+      "GitHub Actions (CI/CD)",
+      "Cloudflare (R2, DNS)",
+      "Railway",
+      "Vercel",
+      "Netlify",
+      "Render",
+    ],
   },
 ];
