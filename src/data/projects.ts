@@ -87,7 +87,4 @@ export const projects: Project[] = [
   },
 ];
 
-/** Shown on the Home tab, in this order. */
-export const featuredProjectIds: ProjectId[] = ["unimoney", "travel", "rasova"];
-
 export const defaultProjectId: ProjectId = "rasova";

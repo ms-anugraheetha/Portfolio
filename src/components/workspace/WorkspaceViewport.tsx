@@ -27,7 +27,7 @@ export function WorkspaceViewport() {
   return (
     <div
       ref={scrollRef}
-      className="workspace-scroll relative flex-1 overflow-y-auto overflow-x-hidden bg-paper"
+      className="workspace-scroll relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden bg-paper"
     >
       <AnimatePresence
         mode="wait"
@@ -37,7 +37,7 @@ export function WorkspaceViewport() {
         <motion.div
           key={`${activeSection}-${reloadKey}`}
           {...panelMotion}
-          className="min-h-full"
+          className="flex flex-1 flex-col"
           role="tabpanel"
           id={`panel-${activeSection}`}
           aria-labelledby={`tab-${activeSection}`}
