@@ -19,18 +19,18 @@ export function Contact() {
         className="mx-auto w-full max-w-xl"
       >
         <SectionLabel>Contact</SectionLabel>
-        <h2 className="mt-2 font-heading text-3xl font-semibold text-charcoal md:text-4xl">
+        <h2 className="mt-2 font-heading text-3xl font-semibold text-ink md:text-4xl">
           Let&apos;s talk.
         </h2>
-        <p className="mt-3 text-base text-charcoal-muted">
+        <p className="mt-3 text-base text-ink-muted">
           {site.availability}
         </p>
-        <p className="mt-1 text-sm text-charcoal-soft">
+        <p className="mt-1 text-sm text-ink-soft">
           {site.educationLine} · {site.location}
         </p>
         <a
           href={`mailto:${site.email}`}
-          className="mt-2 inline-block text-sm text-charcoal-soft hover:text-sage"
+          className="mt-2 inline-block text-sm text-ink-soft hover:text-cherry"
         >
           {site.email}
         </a>
@@ -42,7 +42,7 @@ export function Contact() {
               {...("external" in link && link.external
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
-              className="rounded-full border border-line bg-ivory-deep/50 px-5 py-2.5 text-sm font-medium text-charcoal transition-colors hover:border-sage hover:bg-sage-muted/30"
+              className="rounded-full border border-line bg-paper-deep/50 px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-cherry hover:bg-cherry-muted/30"
             >
               {link.label}
             </a>
@@ -51,7 +51,7 @@ export function Contact() {
             <a
               href={site.cvPath}
               download
-              className="rounded-full border border-line px-5 py-2.5 text-sm font-medium text-charcoal hover:border-sage"
+              className="rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink hover:border-cherry"
             >
               CV
             </a>

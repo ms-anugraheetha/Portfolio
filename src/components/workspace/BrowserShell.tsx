@@ -3,8 +3,8 @@ import { WorkspaceViewport } from "./WorkspaceViewport";
 
 export function BrowserShell() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#e8e4dc] px-2 py-3 md:px-5 md:py-6">
-      <div className="mx-auto flex h-[calc(100vh-1.5rem)] w-full max-w-6xl flex-col overflow-hidden rounded-xl border border-line/90 bg-ivory-deep shadow-[0_24px_80px_-20px_rgba(44,44,42,0.22)] md:h-[calc(100vh-3rem)] md:rounded-2xl">
+    <div className="flex min-h-[100dvh] flex-col bg-frame p-1.5 sm:p-3 md:p-5">
+      <div className="mx-auto flex h-[calc(100dvh-0.75rem)] w-full max-w-[1400px] flex-col overflow-hidden rounded-xl bg-chrome shadow-[0_30px_80px_-20px_rgba(60,0,4,0.55)] ring-1 ring-black/10 sm:h-[calc(100dvh-1.5rem)] md:h-[calc(100dvh-2.5rem)] md:rounded-2xl">
         <BrowserChrome />
         <WorkspaceViewport />
       </div>

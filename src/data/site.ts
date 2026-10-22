@@ -15,8 +15,42 @@ export const site = {
   github: "https://github.com/ms-anugraheetha",
   linkedin:
     "https://www.linkedin.com/in/anugraheetha-bin-saj-9276a933a",
+  /** Put the CV at public/cv.pdf and set this to "/cv.pdf" to show "Download CV". */
   cvPath: undefined as string | undefined,
+  /** Optional — add a full profile URL to show an Instagram link. */
+  instagram: undefined as string | undefined,
 } as const;
+
+/** Home tab copy, taken from the Home page reference. */
+export const homeHero = {
+  greeting: "Hi, I'm",
+  displayName: "Anugraheetha",
+  stamp: "2025",
+  title: ["Computer Science Graduate", "& Aspiring Software Developer"],
+  intro:
+    "I build web applications, explore AI and create solutions that make everyday life a little easier and more fun.",
+  doodles: ["coffee", "code", "cats", "travel", "better me"],
+  motto: ["same girl...", "bigger dreams"],
+  noteDoodle: ["good", "ideas", "better", "code"],
+} as const;
+
+/** Experience & Achievements — order follows the Home reference. */
+export const achievements: {
+  title: string;
+  detail?: string;
+  period?: string;
+  status?: string;
+}[] = [
+  {
+    title: "BSc Computer Systems",
+    detail: "Riga Technical University",
+    period: "2023 – 2026",
+  },
+  { title: "Young Leaders Academy", detail: "KidCafeBot (Telegram Bot)" },
+  { title: "Women's Health Hackathon" },
+  { title: "Logopeds.online Business Challenge" },
+  { title: "Accenture DevOps & Cloud Bootcamp", status: "Applied" },
+];
 
 export const education = [
   {

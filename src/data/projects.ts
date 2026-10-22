@@ -10,6 +10,8 @@ export type Project = {
   github: string;
   demo?: string;
   status?: "live" | "in-development";
+  /** Optional screenshot in public/ (e.g. "/projects/unimoney.png"). */
+  image?: string;
   behindTheBuild: string[];
 };
 
@@ -84,5 +86,8 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+/** Shown on the Home tab, in this order. */
+export const featuredProjectIds: ProjectId[] = ["unimoney", "travel", "rasova"];
 
 export const defaultProjectId: ProjectId = "rasova";

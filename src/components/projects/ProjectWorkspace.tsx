@@ -25,10 +25,10 @@ export function ProjectWorkspace() {
         className="mb-8 max-w-xl"
       >
         <SectionLabel>Selected work</SectionLabel>
-        <h2 className="mt-2 font-heading text-3xl font-semibold tracking-tight text-charcoal md:text-4xl">
+        <h2 className="mt-2 font-heading text-3xl font-semibold tracking-tight text-ink md:text-4xl">
           Product workspaces
         </h2>
-        <p className="mt-3 text-base text-charcoal-muted">
+        <p className="mt-3 text-base text-ink-muted">
           Switch tabs to explore each build—stack, links, and build notes.
         </p>
       </motion.header>
@@ -53,14 +53,14 @@ export function ProjectWorkspace() {
                 onClick={() => onSelectProject(p.id)}
                 className={`relative shrink-0 rounded-t-lg px-4 py-2.5 text-sm font-medium transition-colors ${
                   active
-                    ? "bg-ivory-deep text-charcoal"
-                    : "text-charcoal-muted hover:bg-ivory-deep/50 hover:text-charcoal"
+                    ? "bg-paper-deep text-ink"
+                    : "text-ink-muted hover:bg-paper-deep/50 hover:text-ink"
                 }`}
               >
                 {active && (
                   <motion.span
                     layoutId="project-tab"
-                    className="absolute inset-x-0 top-0 h-0.5 bg-sage"
+                    className="absolute inset-x-0 top-0 h-0.5 bg-cherry"
                     transition={{ duration: 0.25 }}
                   />
                 )}
@@ -77,7 +77,7 @@ export function ProjectWorkspace() {
           })}
         </div>
         <div
-          className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-ivory to-transparent sm:hidden"
+          className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-paper to-transparent sm:hidden"
           aria-hidden
         />
       </div>
@@ -89,37 +89,37 @@ export function ProjectWorkspace() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-2xl border border-line bg-ivory-deep/40 p-5 md:p-8"
+          className="rounded-2xl border border-line bg-paper-deep/40 p-5 md:p-8"
         >
           <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-7">
               <div className="flex flex-wrap items-center gap-3">
-                <h3 className="font-heading text-2xl font-semibold text-charcoal">
+                <h3 className="font-heading text-2xl font-semibold text-ink">
                   {project.title}
                 </h3>
                 {project.status === "in-development" && (
-                  <span className="rounded-full border border-sand bg-sand/40 px-2.5 py-0.5 text-xs font-medium text-charcoal-muted">
+                  <span className="rounded-full border border-cherry-muted bg-cherry-muted/40 px-2.5 py-0.5 text-xs font-medium text-ink-muted">
                     In development
                   </span>
                 )}
               </div>
-              <p className="mt-2 text-sm font-medium text-sage">
+              <p className="mt-2 text-sm font-medium text-cherry">
                 {project.tagline}
               </p>
-              <p className="mt-4 leading-relaxed text-charcoal-muted">
+              <p className="mt-4 leading-relaxed text-ink-muted">
                 {project.description}
               </p>
             </div>
 
             <div className="lg:col-span-5">
-              <p className="text-xs font-medium uppercase tracking-wider text-charcoal-soft">
+              <p className="text-xs font-medium uppercase tracking-wider text-ink-soft">
                 Stack
               </p>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {project.stack.map((tech) => (
                   <li
                     key={tech}
-                    className="rounded-full border border-line bg-ivory px-3 py-1 text-xs font-medium text-charcoal-muted"
+                    className="rounded-full border border-line bg-paper px-3 py-1 text-xs font-medium text-ink-muted"
                   >
                     {tech}
                   </li>
@@ -128,24 +128,24 @@ export function ProjectWorkspace() {
 
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 {project.demo ? (
-                  
+                  <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-charcoal underline-offset-4 hover:text-sage hover:underline"
+                    className="text-sm font-medium text-ink underline-offset-4 hover:text-cherry hover:underline"
                   >
                     Live demo
                   </a>
                 ) : (
-                  <span className="text-sm text-charcoal-soft">
+                  <span className="text-sm text-ink-soft">
                     Live demo coming soon
                   </span>
                 )}
-                
+                <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-medium text-charcoal-muted underline-offset-4 hover:text-sage hover:underline"
+                  className="text-sm font-medium text-ink-muted underline-offset-4 hover:text-cherry hover:underline"
                 >
                   GitHub
                 </a>
@@ -155,7 +155,7 @@ export function ProjectWorkspace() {
                 type="button"
                 onClick={() => setBuildOpen((v) => !v)}
                 aria-expanded={buildOpen}
-                className="mt-6 flex items-center gap-2 text-sm font-medium text-charcoal-muted hover:text-sage"
+                className="mt-6 flex items-center gap-2 text-sm font-medium text-ink-muted hover:text-cherry"
               >
                 {buildOpen ? "Hide" : "Behind the build"}
                 <svg
@@ -179,12 +179,12 @@ export function ProjectWorkspace() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    className="mt-4 space-y-2 overflow-hidden border-l-2 border-sage-muted pl-4"
+                    className="mt-4 space-y-2 overflow-hidden border-l-2 border-cherry-muted pl-4"
                   >
                     {project.behindTheBuild.map((note) => (
                       <li
                         key={note}
-                        className="text-sm leading-relaxed text-charcoal-muted"
+                        className="text-sm leading-relaxed text-ink-muted"
                       >
                         {note}
                       </li>

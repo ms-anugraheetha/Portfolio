@@ -8,11 +8,11 @@ type ButtonProps = ComponentPropsWithoutRef<"a"> & {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-sage text-ivory hover:bg-sage/90 active:scale-[0.98]",
+    "bg-cherry text-paper hover:bg-cherry/90 active:scale-[0.98]",
   ghost:
-    "text-charcoal-muted hover:text-charcoal hover:bg-ivory-deep/80 active:scale-[0.98]",
+    "text-ink-muted hover:text-ink hover:bg-paper-deep/80 active:scale-[0.98]",
   outline:
-    "border border-line bg-ivory/60 text-charcoal hover:border-sage hover:bg-sage-muted/30 hover:text-charcoal active:scale-[0.98]",
+    "border border-line bg-paper/60 text-ink hover:border-cherry hover:bg-cherry-muted/30 hover:text-ink active:scale-[0.98]",
 };
 
 export function Button({

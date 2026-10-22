@@ -13,7 +13,7 @@ export function TechStack() {
         className="mb-10"
       >
         <SectionLabel>Stack</SectionLabel>
-        <h2 className="mt-2 font-heading text-3xl font-semibold text-charcoal">
+        <h2 className="mt-2 font-heading text-3xl font-semibold text-ink">
           Skills at a glance.
         </h2>
       </motion.header>
@@ -28,16 +28,16 @@ export function TechStack() {
           <motion.div
             key={cat.name}
             variants={fadeUp}
-            className="rounded-xl border border-line bg-ivory-deep/40 p-6"
+            className="rounded-xl border border-line bg-paper-deep/40 p-6"
           >
-            <h3 className="font-heading text-xs font-semibold uppercase tracking-wider text-sage">
+            <h3 className="font-heading text-xs font-semibold uppercase tracking-wider text-cherry">
               {cat.name}
             </h3>
             <ul className="mt-4 flex flex-wrap gap-2">
               {cat.items.map((item) => (
                 <li
                   key={item}
-                  className="rounded-full bg-ivory px-3 py-1 text-sm text-charcoal-muted"
+                  className="rounded-full bg-paper px-3 py-1 text-sm text-ink-muted"
                 >
                   {item}
                 </li>

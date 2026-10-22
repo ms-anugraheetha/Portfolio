@@ -19,7 +19,9 @@ export function getRoutePath(
     case "about":
       return `${BASE}/about`;
     case "stack":
-      return `${BASE}/stack`;
+      return `${BASE}/skills`;
+    case "experience":
+      return `${BASE}/experience`;
     case "contact":
       return `${BASE}/contact`;
     case "projects":
@@ -29,14 +31,23 @@ export function getRoutePath(
   }
 }
 
+export type TabIcon = "cat" | "folder" | "user" | "code" | "trophy" | "mail";
+
 export const sectionTabs: {
   id: SectionId;
   label: string;
   tabTitle: string;
+  icon: TabIcon;
 }[] = [
-  { id: "home", label: "Home", tabTitle: "New Tab" },
-  { id: "projects", label: "Projects", tabTitle: "Projects" },
-  { id: "about", label: "Approach", tabTitle: "Approach" },
-  { id: "stack", label: "Stack", tabTitle: "Stack" },
-  { id: "contact", label: "Contact", tabTitle: "Contact" },
+  { id: "home", label: "Home", tabTitle: "anu.exe | Home", icon: "cat" },
+  { id: "projects", label: "Projects", tabTitle: "Projects", icon: "folder" },
+  { id: "about", label: "About Me", tabTitle: "About Me", icon: "user" },
+  { id: "stack", label: "Skills", tabTitle: "Skills", icon: "code" },
+  {
+    id: "experience",
+    label: "Experience",
+    tabTitle: "Experience & Achievements",
+    icon: "trophy",
+  },
+  { id: "contact", label: "Contact", tabTitle: "Contact", icon: "mail" },
 ];

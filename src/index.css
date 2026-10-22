@@ -1,20 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --font-heading: "General Sans", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  /* Rounded body + hand-drawn accents, matching the reference */
+  --font-heading: "Nunito Variable", "Nunito", system-ui, sans-serif;
+  --font-body: "Nunito Variable", "Nunito", system-ui, sans-serif;
+  --font-hand: "Gochi Hand", "Comic Sans MS", cursive;
+  --font-marker: "Patrick Hand", "Comic Sans MS", cursive;
+  --font-bubble: "Chewy", "Gochi Hand", cursive;
 
-  --color-ivory: #f7f5f0;
-  --color-ivory-deep: #efebe3;
-  --color-charcoal: #2c2c2a;
-  --color-charcoal-muted: #5a5a56;
-  --color-charcoal-soft: #8a8a84;
-  --color-sage: #7d9b8a;
-  --color-sage-light: #a8c4b4;
-  --color-sage-muted: #d4e4da;
-  --color-blush: #e8ddd4;
-  --color-sand: #ddd5c8;
-  --color-line: #e2ddd4;
+  /* Red-and-white palette */
+  --color-paper: #fffaf8;
+  --color-paper-deep: #fbefec;
+  --color-ink: #2b1d1e;
+  --color-ink-muted: #5c4a4b;
+  --color-ink-soft: #8f7d7e;
+  --color-cherry: #c4161c;
+  --color-cherry-dark: #a11117;
+  --color-cherry-light: #e46a6e;
+  --color-cherry-muted: #f7dcda;
+  --color-blush: #fbe9e7;
+  --color-line: #efd8d5;
+  --color-frame: #a81117;
+  --color-chrome: #f1e4e2;
+  --color-chrome-deep: #e7d3d0;
 }
 
 @layer base {
@@ -23,7 +31,7 @@
   }
 
   body {
-    @apply min-h-screen bg-[#e5e1d9] font-body text-charcoal antialiased;
+    @apply min-h-screen bg-frame font-body text-ink antialiased;
   }
 
   h1,
@@ -34,7 +42,11 @@
   }
 
   ::selection {
-    @apply bg-sage-muted text-charcoal;
+    @apply bg-cherry-muted text-ink;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-cherry;
   }
 }
 
@@ -42,8 +54,26 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .workspace-scroll {
   scroll-behavior: smooth;
+  scrollbar-color: var(--color-cherry-light) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

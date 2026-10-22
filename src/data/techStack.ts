@@ -44,3 +44,34 @@ export const techStack: TechCategory[] = [
     ],
   },
 ];
+
+/** Compact skill groups for the Home tab card (subset of the CV list). */
+export const homeSkills: { name: string; items: { label: string; mark: string }[] }[] = [
+  {
+    name: "Languages",
+    items: [
+      { label: "Python", mark: "Py" },
+      { label: "JavaScript", mark: "JS" },
+      { label: "TypeScript", mark: "TS" },
+    ],
+  },
+  {
+    name: "Frontend",
+    items: [
+      { label: "React", mark: "Re" },
+      { label: "Vite", mark: "Vi" },
+      { label: "Tailwind CSS", mark: "Tw" },
+    ],
+  },
+  {
+    name: "Backend & Tools",
+    items: [
+      { label: "FastAPI", mark: "Fa" },
+      { label: "Node.js", mark: "No" },
+      { label: "PostgreSQL", mark: "Pg" },
+      { label: "SQLite", mark: "Sq" },
+      { label: "Git", mark: "Gt" },
+      { label: "Docker", mark: "Dk" },
+    ],
+  },
+];

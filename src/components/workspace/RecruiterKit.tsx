@@ -49,7 +49,7 @@ export function RecruiterKit() {
   };
 
   const actionBtnClass =
-    "w-full rounded-lg border border-line bg-ivory py-2.5 text-center text-sm font-medium text-charcoal transition-colors hover:border-sage hover:bg-sage-muted/30";
+    "w-full rounded-lg border border-line bg-paper py-2.5 text-center text-sm font-medium text-ink transition-colors hover:border-cherry hover:bg-cherry-muted/30";
 
   return (
     <div className="relative" ref={panelRef}>
@@ -61,14 +61,14 @@ export function RecruiterKit() {
         aria-expanded={open}
         aria-haspopup="true"
         title="Recruiter kit — copy brief, open demos"
-        className={`relative flex h-8 items-center gap-1.5 rounded-md px-2 text-charcoal transition-colors md:px-2.5 ${
+        className={`relative flex h-8 items-center gap-1.5 rounded-md px-2 text-ink transition-colors md:px-2.5 ${
           open
-            ? "bg-sage-muted text-charcoal"
-            : "hover:bg-ivory-deep"
+            ? "bg-cherry-muted text-ink"
+            : "hover:bg-paper-deep"
         }`}
       >
         <svg
-          className="size-4 shrink-0 text-sage"
+          className="size-4 shrink-0 text-cherry"
           viewBox="0 0 20 20"
           fill="none"
           aria-hidden
@@ -92,12 +92,12 @@ export function RecruiterKit() {
         <div
           role="dialog"
           aria-label="Recruiter quick actions"
-          className="absolute right-0 top-full z-50 mt-2 w-72 rounded-xl border border-line bg-ivory p-4 shadow-lg"
+          className="absolute right-0 top-full z-50 mt-2 w-72 rounded-xl border border-line bg-paper p-4 shadow-lg"
         >
-          <p className="font-heading text-sm font-semibold text-charcoal">
+          <p className="font-heading text-sm font-semibold text-ink">
             Short on time?
           </p>
-          <p className="mt-1 text-xs leading-relaxed text-charcoal-muted">
+          <p className="mt-1 text-xs leading-relaxed text-ink-muted">
             One-click tools to review this candidate no digging through tabs.
           </p>
 
@@ -130,13 +130,13 @@ export function RecruiterKit() {
           </div>
 
           <div className="mt-4 border-t border-line pt-3">
-            <p className="mb-2 text-xs font-medium uppercase tracking-wider text-charcoal-soft">
+            <p className="mb-2 text-xs font-medium uppercase tracking-wider text-ink-soft">
               Quick contact
             </p>
             <div className="flex flex-wrap gap-2">
               <a
                 href={`mailto:${site.email}`}
-                className="rounded-md bg-ivory-deep px-2.5 py-1 text-xs font-medium text-charcoal hover:text-sage"
+                className="rounded-md bg-paper-deep px-2.5 py-1 text-xs font-medium text-ink hover:text-cherry"
               >
                 Email
               </a>
@@ -144,7 +144,7 @@ export function RecruiterKit() {
                 href={site.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md bg-ivory-deep px-2.5 py-1 text-xs font-medium text-charcoal hover:text-sage"
+                className="rounded-md bg-paper-deep px-2.5 py-1 text-xs font-medium text-ink hover:text-cherry"
               >
                 LinkedIn
               </a>
@@ -152,7 +152,7 @@ export function RecruiterKit() {
                 href={site.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md bg-ivory-deep px-2.5 py-1 text-xs font-medium text-charcoal hover:text-sage"
+                className="rounded-md bg-paper-deep px-2.5 py-1 text-xs font-medium text-ink hover:text-cherry"
               >
                 GitHub
               </a>

@@ -29,13 +29,13 @@ export function About() {
       >
         <motion.div variants={fadeUp} className="max-w-2xl">
           <SectionLabel>About</SectionLabel>
-          <h2 className="mt-2 font-heading text-3xl font-semibold text-charcoal">
+          <h2 className="mt-2 font-heading text-3xl font-semibold text-ink">
             Building web products with a frontend-first lens.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-charcoal-muted">
+          <p className="mt-4 text-base leading-relaxed text-ink-muted">
             {site.about}
           </p>
-          <p className="mt-4 text-base leading-relaxed text-charcoal-muted">
+          <p className="mt-4 text-base leading-relaxed text-ink-muted">
             {site.workStyle}
           </p>
         </motion.div>
@@ -46,15 +46,15 @@ export function About() {
             {education.map((item) => (
               <li
                 key={item.degree}
-                className="rounded-xl border border-line bg-ivory-deep/40 p-5"
+                className="rounded-xl border border-line bg-paper-deep/40 p-5"
               >
-                <p className="font-heading font-semibold text-charcoal">
+                <p className="font-heading font-semibold text-ink">
                   {item.degree}
                 </p>
-                <p className="mt-1 text-sm text-charcoal-muted">
+                <p className="mt-1 text-sm text-ink-muted">
                   {item.school}
                 </p>
-                <p className="mt-1 text-xs text-charcoal-soft">
+                <p className="mt-1 text-xs text-ink-soft">
                   {item.period} · {item.location}
                 </p>
               </li>
@@ -69,12 +69,12 @@ export function About() {
               <motion.article
                 key={item.title}
                 variants={fadeUp}
-                className="rounded-xl border border-line bg-ivory-deep/40 p-5"
+                className="rounded-xl border border-line bg-paper-deep/40 p-5"
               >
-                <h3 className="font-heading text-base font-semibold text-charcoal">
+                <h3 className="font-heading text-base font-semibold text-ink">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-charcoal-muted">
+                <p className="mt-2 text-sm leading-relaxed text-ink-muted">
                   {item.body}
                 </p>
               </motion.article>
