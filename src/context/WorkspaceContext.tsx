@@ -49,11 +49,8 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
 
   const routePath = useMemo(
     () =>
-      getRoutePath(
-        activeSection,
-        activeSection === "projects" ? activeProjectId : undefined,
-      ),
-    [activeSection, activeProjectId],
+      getRoutePath(activeSection),
+    [activeSection],
   );
 
   const pushHistory = useCallback((entry: HistoryEntry) => {

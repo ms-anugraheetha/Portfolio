@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { sectionTabs } from "@/data/routes";
 import { useWorkspace } from "@/context/WorkspaceContext";
 import { TabGlyph } from "@/components/ui/Icons";
+import { SecretCat } from "./SecretCat";
 
 export function BrowserTabBar() {
   const { activeSection, navigate } = useWorkspace();
@@ -31,7 +32,7 @@ export function BrowserTabBar() {
     <div className="relative min-w-0 flex-1">
       <div
         ref={listRef}
-        className="no-scrollbar flex items-end overflow-x-auto"
+        className="no-scrollbar flex items-end overflow-x-auto pr-2"
         role="tablist"
         aria-label="Portfolio pages"
       >
@@ -51,11 +52,11 @@ export function BrowserTabBar() {
               title={tab.tabTitle}
               onClick={() => navigate(tab.id)}
               onKeyDown={(e) => onKeyDown(e, i)}
-              className={`group relative flex h-9 shrink-0 items-center gap-2 rounded-t-[10px] px-3 text-left text-[13px] transition-colors md:h-10 md:px-3.5 ${
+              className={`group relative flex h-9 shrink-0 items-center gap-2 rounded-t-[10px] px-3 text-left text-[13px] outline-none transition-colors duration-150 focus-visible:z-20 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cherry/60 md:h-10 md:px-3.5 ${
                 isActive
-                  ? "z-10 bg-paper font-semibold text-ink shadow-[0_-1px_0_0_var(--color-line)]"
-                  : "text-ink-muted hover:bg-chrome-deep/70 hover:text-ink"
-              } ${isActive ? "min-w-[8.5rem] md:min-w-[11rem]" : "w-11 justify-center sm:w-auto sm:min-w-[7rem] sm:justify-start md:min-w-[9rem]"} max-w-[15rem]`}
+                  ? "z-10 bg-paper font-semibold text-ink shadow-[0_-1px_0_0_var(--color-line),0_-6px_14px_-10px_rgba(80,10,14,0.35)]"
+                  : "font-medium text-ink-muted hover:bg-chrome-deep/70 hover:text-ink"
+              } ${isActive ? "min-w-[8.5rem] sm:min-w-[9rem] sm:flex-1 sm:basis-0" : "w-11 justify-center sm:w-auto sm:min-w-0 sm:flex-1 sm:basis-0 sm:justify-start"} max-w-[15rem]`}
             >
               {/* Divider between inactive tabs, like a real browser */}
               {!isActive && i > 0 && !prevActive && (
@@ -76,10 +77,16 @@ export function BrowserTabBar() {
                   />
                 </>
               )}
-              <TabGlyph
-                icon={tab.icon}
-                className={`size-4 shrink-0 ${isActive ? "text-cherry" : "text-ink-soft group-hover:text-cherry"}`}
-              />
+              {tab.icon === "cat" ? (
+                <SecretCat
+                  className={`size-4 shrink-0 ${isActive ? "text-cherry" : "text-ink-soft group-hover:text-cherry"}`}
+                />
+              ) : (
+                <TabGlyph
+                  icon={tab.icon}
+                  className={`size-4 shrink-0 ${isActive ? "text-cherry" : "text-ink-soft group-hover:text-cherry"}`}
+                />
+              )}
               <span
                 className={`truncate ${isActive ? "" : "hidden sm:inline"}`}
               >

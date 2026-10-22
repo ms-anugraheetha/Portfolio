@@ -23,15 +23,9 @@ export const site = {
 
 /** Home tab copy, taken from the Home page reference. */
 export const homeHero = {
-  greeting: "Hi, I'm",
-  displayName: "Anugraheetha",
-  stamp: "2025",
   title: ["Computer Science Graduate", "& Aspiring Software Developer"],
   intro:
     "I build web applications, explore AI and create solutions that make everyday life a little easier and more fun.",
-  doodles: ["coffee", "code", "cats", "travel", "better me"],
-  motto: ["same girl...", "bigger dreams"],
-  noteDoodle: ["good", "ideas", "better", "code"],
 } as const;
 
 /** Experience & Achievements — order follows the Home reference. */
@@ -40,16 +34,42 @@ export const achievements: {
   detail?: string;
   period?: string;
   status?: string;
+  description?: string;
 }[] = [
   {
     title: "BSc Computer Systems",
-    detail: "Riga Technical University",
+    detail: "Riga Technical University · Riga, Latvia",
     period: "2023 – 2026",
+    status: "Completed",
+    description:
+      "Completed bachelor’s degree in Computer Systems with a focus on software development and AI.",
   },
-  { title: "Young Leaders Academy", detail: "KidCafeBot (Telegram Bot)" },
-  { title: "Women's Health Hackathon" },
-  { title: "Logopeds.online Business Challenge" },
-  { title: "Accenture DevOps & Cloud Bootcamp", status: "Applied" },
+  {
+    title: "Young Leaders Academy",
+    detail: "KidCafeBot (Telegram Bot)",
+    period: "2024",
+    description:
+      "Collaborated in a team to build a Telegram bot to support kids and parents with café recommendations.",
+  },
+  {
+    title: "Women's Health Hackathon",
+    period: "2024",
+    description:
+      "Participated in a hackathon focused on women’s health and built solutions to address real-world challenges.",
+  },
+  {
+    title: "Logopeds.online Business Challenge",
+    period: "2024",
+    description:
+      "Worked on a business challenge to develop a speech therapy startup concept for the Latvian market.",
+  },
+  {
+    title: "Accenture DevOps & Cloud Bootcamp",
+    period: "2025",
+    status: "Applied",
+    description:
+      "Applied to a DevOps and Cloud bootcamp covering cloud infrastructure, CI/CD and modern development workflows.",
+  },
 ];
 
 export const education = [

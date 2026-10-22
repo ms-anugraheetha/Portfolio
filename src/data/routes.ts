@@ -1,18 +1,8 @@
-import type { ProjectId, SectionId } from "@/types/workspace";
+import type { SectionId } from "@/types/workspace";
 
 const BASE = "anugraheetha.dev";
 
-export const projectSlugs: Record<ProjectId, string> = {
-  rasova: "rasova",
-  travel: "travel-system",
-  unimoney: "unimoney",
-  coach: "python-confidence-coach",
-};
-
-export function getRoutePath(
-  section: SectionId,
-  projectId?: ProjectId,
-): string {
+export function getRoutePath(section: SectionId): string {
   switch (section) {
     case "home":
       return `${BASE}/`;
@@ -25,9 +15,9 @@ export function getRoutePath(
     case "contact":
       return `${BASE}/contact`;
     case "projects":
-      return projectId
-        ? `${BASE}/projects/${projectSlugs[projectId]}`
-        : `${BASE}/projects`;
+      // The Projects tab shows every project at once, so the address bar
+      // stays on /projects rather than naming one of them.
+      return `${BASE}/projects`;
   }
 }
 
@@ -46,7 +36,7 @@ export const sectionTabs: {
   {
     id: "experience",
     label: "Experience",
-    tabTitle: "Experience & Achievements",
+    tabTitle: "Experience",
     icon: "trophy",
   },
   { id: "contact", label: "Contact", tabTitle: "Contact", icon: "mail" },

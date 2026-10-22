@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { site } from "@/data/site";
+import { useContent } from "@/content/ContentContext";
 import { useWorkspace } from "@/context/WorkspaceContext";
 import { BrowserTabBar } from "./BrowserTabBar";
 import { RecruiterKit } from "./RecruiterKit";
@@ -17,6 +17,7 @@ export function BrowserChrome() {
     navigate,
   } = useWorkspace();
   const [toast, setToast] = useState<string | null>(null);
+  const { contact } = useContent();
 
   const showToast = (msg: string) => {
     setToast(msg);
@@ -102,8 +103,8 @@ export function BrowserChrome() {
         <div className="flex shrink-0 items-center gap-0.5 md:gap-1">
           <RecruiterKit />
           <a
-            href={`mailto:${site.email}`}
-            aria-label={`Email ${site.shortName}`}
+            href={`mailto:${contact.email}`}
+            aria-label={`Email ${contact.shortName}`}
             title="Email"
             className="hidden size-8 items-center justify-center rounded-full text-ink-muted transition-colors hover:bg-cherry-muted/60 hover:text-cherry sm:flex"
           >

@@ -1,26 +1,24 @@
-import { projects } from "@/data/projects";
-import { site } from "@/data/site";
-import { techStack } from "@/data/techStack";
-import { education } from "@/data/site";
+import type { Project, SiteContent } from "@/content/types";
 
-export function buildHiringBrief(portfolioUrl?: string): string {
-  const skillLines = techStack.map(
-    (cat) => `${cat.name}: ${cat.items.join(", ")}`,
+export function buildHiringBrief(content: SiteContent, portfolioUrl?: string): string {
+  const { home, about, contact, skills, projects } = content;
+  const skillLines = skills.categories.map(
+    (cat) => `${cat.name}: ${cat.items.map((s) => s.name).join(", ")}`,
   );
 
   const lines = [
-    `CANDIDATE BRIEF — ${site.name}`,
+    `CANDIDATE BRIEF — ${contact.fullName}`,
     "─".repeat(42),
     "",
-    `Target roles: ${site.availability}`,
-    `Location: ${site.location}`,
-    `Headline: ${site.headline}`,
+    `Target roles: ${about.status}`,
+    `Location: ${contact.location}`,
+    `Headline: ${home.title}`,
     "",
     "ABOUT",
-    site.about,
+    about.paragraphs.join("\n\n"),
     "",
     "EDUCATION",
-    ...education.map(
+    ...about.education.map(
       (e) => `• ${e.degree} | ${e.school} | ${e.period} | ${e.location}`,
     ),
     "",
@@ -28,9 +26,9 @@ export function buildHiringBrief(portfolioUrl?: string): string {
     ...skillLines,
     "",
     "CONTACT",
-    `Email: ${site.email}`,
-    `LinkedIn: ${site.linkedin}`,
-    `GitHub: ${site.github}`,
+    `Email: ${contact.email}`,
+    `LinkedIn: ${contact.linkedin}`,
+    `GitHub: ${contact.github}`,
     "",
     "PROJECTS",
     ...projects.map((p, i) => {
@@ -38,9 +36,9 @@ export function buildHiringBrief(portfolioUrl?: string): string {
       return [
         `${i + 1}. ${p.title} [${p.stack.join(", ")}]`,
         `   ${p.status === "in-development" ? "In progress" : "Deployed"}`,
-        `   ${p.description}`,
+        `   ${p.description || p.summary}`,
         `   ${demoLine}`,
-        `   Code: ${p.github}`,
+        ...(p.github ? [`   Code: ${p.github}`] : []),
       ].join("\n");
     }),
     "",
@@ -52,7 +50,7 @@ export function buildHiringBrief(portfolioUrl?: string): string {
   return lines.join("\n");
 }
 
-export function openAllLiveDemos(): void {
+export function openAllLiveDemos(projects: Project[]): void {
   const live = projects.filter((p) => p.demo);
   live.forEach((p, i) => {
     window.setTimeout(

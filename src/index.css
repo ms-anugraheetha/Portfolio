@@ -1,11 +1,34 @@
 @import "tailwindcss";
 
+/* Self-hosted display + mono faces (SIL Open Font License, via Fontsource). */
+@font-face {
+  font-family: "Anton";
+  src: url("/fonts/anton-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("/fonts/space-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("/fonts/space-mono-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  /* Rounded body + hand-drawn accents, matching the reference */
+  /* Rounded body + a bubbly display face for the hero name */
   --font-heading: "Nunito Variable", "Nunito", system-ui, sans-serif;
   --font-body: "Nunito Variable", "Nunito", system-ui, sans-serif;
-  --font-hand: "Gochi Hand", "Comic Sans MS", cursive;
-  --font-marker: "Patrick Hand", "Comic Sans MS", cursive;
+  --font-display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-bubble: "Chewy", "Gochi Hand", cursive;
 
   /* Red-and-white palette */
@@ -66,6 +89,37 @@
 .workspace-scroll {
   scroll-behavior: smooth;
   scrollbar-color: var(--color-cherry-light) transparent;
+}
+
+/* Secret cat: a quick ear-wiggle and a tiny heart on the fifth click. */
+@keyframes cat-wiggle {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-14deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-6deg);
+  }
+}
+@keyframes cat-heart {
+  0% {
+    opacity: 0;
+    transform: translateY(2px) scale(0.4);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-7px) scale(1);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

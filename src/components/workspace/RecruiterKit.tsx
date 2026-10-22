@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { site } from "@/data/site";
+import { useContent } from "@/content/ContentContext";
 import { buildHiringBrief, openAllLiveDemos } from "@/lib/hiringBrief";
 import { CopyToast } from "@/components/ui/CopyToast";
 
 export function RecruiterKit() {
   const [open, setOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
+  const content = useContent();
   const panelRef = useRef<HTMLDivElement>(null);
 
   const showToast = (msg: string) => {
@@ -26,7 +27,7 @@ export function RecruiterKit() {
 
   const copyBrief = async () => {
     try {
-      await navigator.clipboard.writeText(buildHiringBrief(window.location.href));
+      await navigator.clipboard.writeText(buildHiringBrief(content, window.location.href));
       showToast("Hiring brief copied — ready to paste");
       setOpen(false);
     } catch {
@@ -112,7 +113,7 @@ export function RecruiterKit() {
             <button
               type="button"
               onClick={() => {
-                openAllLiveDemos();
+                openAllLiveDemos(content.projects);
                 showToast("Opening live demos…");
                 setOpen(false);
               }}
@@ -135,13 +136,13 @@ export function RecruiterKit() {
             </p>
             <div className="flex flex-wrap gap-2">
               <a
-                href={`mailto:${site.email}`}
+                href={`mailto:${content.contact.email}`}
                 className="rounded-md bg-paper-deep px-2.5 py-1 text-xs font-medium text-ink hover:text-cherry"
               >
                 Email
               </a>
               <a
-                href={site.linkedin}
+                href={content.contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-md bg-paper-deep px-2.5 py-1 text-xs font-medium text-ink hover:text-cherry"
@@ -149,7 +150,7 @@ export function RecruiterKit() {
                 LinkedIn
               </a>
               <a
-                href={site.github}
+                href={content.contact.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-md bg-paper-deep px-2.5 py-1 text-xs font-medium text-ink hover:text-cherry"

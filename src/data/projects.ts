@@ -2,6 +2,10 @@ import type { ProjectId } from "@/types/workspace";
 
 export type Project = {
   id: ProjectId;
+  /** URL-safe name shown in the card's address bar (…/projects/<slug>). */
+  slug: string;
+  /** Card illustration — a path in public/ or an uploaded image URL. */
+  image?: string;
   title: string;
   shortTitle: string;
   tagline: string;
@@ -10,14 +14,21 @@ export type Project = {
   github: string;
   demo?: string;
   status?: "live" | "in-development";
-  /** Optional screenshot in public/ (e.g. "/projects/unimoney.png"). */
-  image?: string;
+  /** Short label shown above the title on the project card. */
+  category: string;
+  /** One- or two-sentence summary for the project card. */
+  summary: string;
   behindTheBuild: string[];
 };
 
 export const projects: Project[] = [
   {
     id: "rasova",
+    slug: "rasova",
+    image: "/projects/art/rasova.webp",
+    category: "E-commerce",
+    summary:
+      "A full-stack e-commerce platform with a mobile-friendly storefront, admin panel, and guest checkout.",
     title: "Rasova",
     shortTitle: "Rasova",
     tagline: "Production e-commerce platform with payments",
@@ -35,6 +46,11 @@ export const projects: Project[] = [
   },
   {
     id: "travel",
+    slug: "travel-system",
+    image: "/projects/art/travel.webp",
+    category: "Machine Learning",
+    summary:
+      "A recommendation platform that helps users discover travel destinations, powered by Ridge Regression and Collaborative Filtering models.",
     title: "Travel Destination Recommendation System",
     shortTitle: "Travel",
     tagline: "ML-powered personalized travel suggestions",
@@ -53,6 +69,11 @@ export const projects: Project[] = [
   },
   {
     id: "unimoney",
+    slug: "unimoney",
+    image: "/projects/art/unimoney.webp",
+    category: "Productivity / Fintech",
+    summary:
+      "A student expense tracker for budgeting, managing transactions, and understanding spending habits.",
     title: "UniMoney - Student Expense Tracker",
     shortTitle: "UniMoney",
     tagline: "Budgeting and spending analytics for students",
@@ -70,6 +91,11 @@ export const projects: Project[] = [
   },
   {
     id: "coach",
+    slug: "python-confidence-coach",
+    image: "/projects/art/coach.webp",
+    category: "AI Application",
+    summary:
+      "An AI-powered learning tool that helps beginners build Python confidence through an explain–check–assess coaching loop.",
     title: "Python Confidence Coach",
     shortTitle: "Coach",
     tagline: "AI-assisted learning for beginner Python",
@@ -77,7 +103,7 @@ export const projects: Project[] = [
       "AI-assisted learning platform using an agentic explain-check-assess coaching loop to help beginner Python learners understand concepts through guided explanations, code analysis, and adaptive follow-up exercises.",
     stack: ["React", "TypeScript", "FastAPI", "PostgreSQL"],
     github: "https://github.com/ms-anugraheetha/python-confidence-coach",
-    demo: "https://python-confidence-coach.vercel.app/login",
+    demo: "https://python-confidence-coach.vercel.app/",
     status: "live",
     behindTheBuild: [
       "Built an AI-assisted learning platform using an agentic explain-check-assess coaching loop for Python beginners.",

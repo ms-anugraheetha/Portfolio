@@ -6,4 +6,5 @@ export type SectionId =
   | "experience"
   | "contact";
 
-export type ProjectId = "rasova" | "travel" | "unimoney" | "coach";
+/** Built-in projects use short ids ("rasova"); CMS projects use UUIDs. */
+export type ProjectId = string;
